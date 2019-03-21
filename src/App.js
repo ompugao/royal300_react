@@ -1,55 +1,18 @@
 import React, { Component } from 'react';
-import Carousel from 'nuka-carousel';
+// import Carousel from 'nuka-carousel';
 
 // import logo from './logo.svg';
 import './App.css';
+import MyCard from './MyCard.js';
 
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
- 
-const cardstyles = {
-  card: {
-    minWidth: 275,
-  },
-  bullet: {
-    display: 'inline-block',
-    margin: '0 2px',
-    transform: 'scale(0.8)',
-  },
-  title: {
-    fontSize: 14,
-  },
-  pos: {
-    marginBottom: 12,
-  },
-};
+import {createMuiTheme} from '@material-ui/core/styles';
 
-function MyCard(props) {
-  const { s } = props;
-  return (
-    <Card className={s.no}>
-      <CardContent>
-        <Typography variant="h5" component="h2">
-          {s.english}
-        </Typography>
-        <Typography component="p">
-          {s.japanese}
-        </Typography>
-        <Typography component="p">
-          {s.note}
-        </Typography>
-      </CardContent>
-      {/*
-      <CardActions>
-        <Button size="small">Learn More</Button>
-      </CardActions>
-      */}
-    </Card>
-  );
-}
+const theme = createMuiTheme({
+  typography: {
+    // In Japanese the characters are usually larger.
+    fontSize: 12,
+  },
+});
 
 class App extends Component {
   constructor(props) {
@@ -71,21 +34,26 @@ class App extends Component {
 
 
   render() {
+    var cards = [];
+    for(var i in this.state.english_scripts) {
+      cards.push(<MyCard
+        key={this.state.english_scripts[i].no}
+        s={this.state.english_scripts[i]} />)
+      //if (i === "10") {
+        //break;
+      //}
+    }
+
     return (
-      <div className="App">
+      <div className="App" theme={theme}>
         {/*
         <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
         </header>
         */}
-        var cards = [];
-        for(var i in this.state.english_scripts) {
-          cards.push(<MyCard s={this.state.english_scripts[i]} />);
-        }
-
-        <Carousel className="App-header">
-          {cards}
-        </Carousel>
+        {/* <Carousel className="App-header"> */}
+        {/* </Carousel> */}
+        {cards}
       </div>
     );
   }
