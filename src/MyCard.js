@@ -13,13 +13,8 @@ const styles = (theme: Object) => ({
     //minWidth: 200,
     //maxWidth: 576,
     width: '95%',
-    //height: '100%',
+    height: '90%',
     margin: '12px',
-  },
-  bullet: {
-    display: 'inline-block',
-    margin: '0 2px',
-    transform: 'scale(0.8)',
   },
   title: {
     fontSize: 14,

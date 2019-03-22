@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 // import Carousel from 'nuka-carousel';
+import SwipeableViews from 'react-swipeable-views';
+import { bindKeyboard } from 'react-swipeable-views-utils';
 
 // import logo from './logo.svg';
 import './App.css';
@@ -7,12 +9,15 @@ import MyCard from './MyCard.js';
 
 import {createMuiTheme} from '@material-ui/core/styles';
 
+
 const theme = createMuiTheme({
   typography: {
     // In Japanese the characters are usually larger.
     fontSize: 12,
   },
 });
+
+const BindKeyboardSwipeableViews = bindKeyboard(SwipeableViews);
 
 class App extends Component {
   constructor(props) {
@@ -53,7 +58,9 @@ class App extends Component {
         */}
         {/* <Carousel className="App-header"> */}
         {/* </Carousel> */}
-        {cards}
+        <BindKeyboardSwipeableViews className="SwipeableView">
+          {cards}
+        </BindKeyboardSwipeableViews>
       </div>
     );
   }

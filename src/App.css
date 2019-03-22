@@ -1,5 +1,7 @@
 .App {
   text-align: left;
+  min-height: 100vh;
+  height: 100%;
 }
 
 .App-logo {
@@ -24,6 +26,16 @@
   color: #61dafb;
 }
 
+.SwipeableView {
+  min-height: 100vh;
+  height: 100%;
+  display: flex;
+  background-color: #282c34;
+}
+
+.react-swipeable-view-container {
+  width: 100%;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
