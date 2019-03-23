@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import Card from '@material-ui/core/Card';
@@ -26,11 +26,10 @@ const styles = (theme: Object) => ({
 
 function MyCard(props) {
   const { classes, s } = props;
-  console.log(props);
   return (
     <Card className={classes.card}>
       <CardContent>
-        <Typography variant="p" component="p">
+        <Typography variant="subtitle2" component="p">
           {s.point_no} - {s.no}
         </Typography>
         <Typography variant="h6" component="h3">
