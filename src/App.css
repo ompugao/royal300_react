@@ -27,8 +27,8 @@
 }
 
 .SwipeableView {
-  min-height: 100vh;
-  height: 100%;
+  min-height: 90vh;
+  height: 90%;
   display: flex;
   background-color: #282c34;
 }
